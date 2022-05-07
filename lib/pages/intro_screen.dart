@@ -14,9 +14,9 @@ class App extends StatelessWidget {
     );
 
     return MaterialApp(
-      title: 'Introduction screen',
+      title: 'BhasaGuru',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: ThemeData(primaryColor: Colors.redAccent[400]),
       home: OnBoardingPage(),
     );
   }
@@ -38,7 +38,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
 
   Widget _buildFullscreenImage() {
     return Image.asset(
-      'assets/fullscreen.jpg',
+      'assets/newa.jpg',
       fit: BoxFit.cover,
       height: double.infinity,
       width: double.infinity,
@@ -54,7 +54,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
   Widget build(BuildContext context) {
     const bodyStyle = TextStyle(fontSize: 19.0);
 
-    const pageDecoration = const PageDecoration(
+    const pageDecoration = PageDecoration(
       titleTextStyle: TextStyle(fontSize: 28.0, fontWeight: FontWeight.w700),
       bodyTextStyle: bodyStyle,
       bodyPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
@@ -70,7 +70,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         child: SafeArea(
           child: Padding(
             padding: const EdgeInsets.only(top: 16, right: 16),
-            child: _buildImage('flutter.png', 100),
+            child: _buildImage('logo.png', 100),
           ),
         ),
       ),
@@ -78,9 +78,13 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         width: double.infinity,
         height: 60,
         child: ElevatedButton(
-          child: const Text(
-            'Let\'s go right away!',
-            style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+          style: ElevatedButton.styleFrom(
+              primary: Color(0xFF4D4C53),
+              padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+              ),
+          child:  const Text(
+            'Start Learning',
+            style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold,),
           ),
           onPressed: () => _onIntroEnd(context),
         ),
@@ -106,7 +110,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
               style: TextStyle(color: Colors.white),
             ),
             style: ElevatedButton.styleFrom(
-              primary: Colors.lightBlue,
+              primary: const Color(0xFF4D4C53),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8.0),
               ),
@@ -123,10 +127,10 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       nextFlex: 0,
       showBackButton: true,
       //rtl: true, // Display as right-to-left
-      back: const Icon(Icons.arrow_back),
+      back: const Icon(Icons.arrow_back,color: Colors.black,),
       skip: const Text('Skip', style: TextStyle(fontWeight: FontWeight.w600)),
-      next: const Icon(Icons.arrow_forward),
-      done: const Text('Done', style: TextStyle(fontWeight: FontWeight.w600)),
+      next: const Icon(Icons.arrow_forward,color: Colors.black,),
+      done: const Text('Done', style: TextStyle(fontWeight: FontWeight.w600,color: Colors.black)),
       curve: Curves.fastLinearToSlowEaseIn,
       controlsMargin: const EdgeInsets.all(16),
       controlsPadding: kIsWeb
@@ -141,7 +145,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         ),
       ),
       dotsContainerDecorator: const ShapeDecoration(
-        color: Colors.black87,
+        color: Colors.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(8.0)),
         ),
