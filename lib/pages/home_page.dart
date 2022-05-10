@@ -90,7 +90,11 @@ class _HomePageState extends State<HomePage> {
                       Column(
                         children: [
                           InkWell(
-                            onTap: () {}, // Handle your callback.
+                            onTap: () {Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const NewarDesktop()),
+                            );}, // Handle your callback.
                             splashColor: Colors.brown.withOpacity(0.5),
                             child: Ink(
                               height: 90,
@@ -114,7 +118,11 @@ class _HomePageState extends State<HomePage> {
                       Column(
                         children: [
                           InkWell(
-                            onTap: () {}, // Handle your callback.
+                            onTap: () {Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const NewarDesktop()),
+                            );}, // Handle your callback.
                             splashColor: Colors.brown.withOpacity(0.5),
                             child: Ink(
                               height: 90,
