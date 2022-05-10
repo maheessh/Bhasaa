@@ -1,8 +1,9 @@
+import 'package:favorite_button/favorite_button.dart';
 import 'package:flutter/material.dart';
 
 class Carde extends StatelessWidget {
   final String name;
-  final IconButton star;
+  final FavoriteButton star;
   final String description;
   final String nepali;
   const Carde(this.name, this.star, this.description, this.nepali);
@@ -16,22 +17,27 @@ class Carde extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 10.0, top: 10),
                 child: Text(
                   name,
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
+                  style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
                 ),
               ),
             ),
-            IconButton(onPressed: (){}, icon: const Icon(Icons.star_outline)),
+            FavoriteButton(
+              valueChanged: (_isFavorite) {
+                print('Is Favorite : $_isFavorite');
+              },
+            ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 4,
         ),
         Text(
           description,
-          style: TextStyle(fontSize: 14, color: Colors.redAccent),
+          style: const TextStyle(fontSize: 14, color: Colors.redAccent),
         ),
-        Text(nepali,style: TextStyle(color: Colors.brown),)
+        Text(nepali,style: const TextStyle(color: Colors.brown),)
       ],
     );
   }
 }
+
